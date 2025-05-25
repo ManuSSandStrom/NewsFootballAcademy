@@ -1,0 +1,1104 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', 'Lato', sans-serif;
+    background-color: #0F0F0F; /* Primary Dark Background */
+    color: #B0B0B0; /* Muted Gray Text */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bebas Neue', 'Montserrat', sans-serif;
+    color: #F5EAEA; /* Soft Pinkish White */
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #0F0F0F;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo img {
+    width: 80px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.navbar .logo img:hover {
+    transform: scale(1.1);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+    position: relative;
+}
+
+.nav-links a {
+    color: #F5EAEA;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Bebas Neue', sans-serif;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.nav-links a:hover {
+    color: #D4AF37; /* Highlight Gold */
+    transform: translateY(-2px);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #D4AF37;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #F5EAEA;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+.close-btn {
+    display: none;
+    font-size: 24px;
+    color: #FF0000; /* Red color for X */
+    cursor: pointer;
+    text-align: right;
+    padding: 10px 20px;
+    margin: 0;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: rotate(90deg);
+}
+
+/* Hero Section */
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 40px;
+    background: linear-gradient(180deg, #0F0F0F, #1A1A1A);
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.hero-content h1:hover {
+    color: #D4AF37;
+}
+
+.hero-content h2 {
+    font-size: 30px;
+    color: #D4AF37; /* Highlight Gold */
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.hero-content h2:hover {
+    transform: scale(1.05);
+}
+
+.hero-content p {
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.hero-logo img {
+    width: 200px;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.hero-logo img:hover {
+    transform: rotate(360deg);
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.2s;
+}
+
+.about-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.about-section h2:hover::after {
+    width: 100px;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.about-text, .about-mission {
+    flex: 1;
+    min-width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.about-text:hover, .about-mission:hover {
+    transform: translateY(-5px);
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: filter 0.3s ease;
+}
+
+.about-image img:hover {
+    filter: brightness(1.2);
+}
+
+.about-text p, .about-mission p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Core Values Section */
+.core-values-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.4s;
+}
+
+.core-values-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.core-values-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.core-values-section h2:hover::after {
+    width: 100px;
+}
+
+.core-values-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.values-pyramid {
+    flex: 1;
+    min-width: 300px;
+}
+
+.values-pyramid img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.values-pyramid img:hover {
+    transform: scale(1.05);
+}
+
+.values-list {
+    flex: 1;
+    min-width: 300px;
+}
+
+.values-list ul {
+    list-style: none;
+}
+
+.values-list li {
+    margin-bottom: 15px;
+    font-size: 16px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.values-list li:hover {
+    color: #F5EAEA;
+    transform: translateX(10px);
+}
+
+.values-list li strong {
+    color: #D4AF37; /* Highlight Gold */
+}
+
+.values-list p {
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+/* Training Programs Section */
+.programs-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.6s;
+}
+
+.programs-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.programs-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.programs-section h2:hover::after {
+    width: 100px;
+}
+
+.programs-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.program {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #680000; /* Accent Red/Maroon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(104, 0, 0, 0.3);
+}
+
+.program h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.program h3:hover {
+    color: #D4AF37;
+}
+
+.program p {
+    font-size: 16px;
+}
+
+/* Tournaments Section */
+.tournaments-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.8s;
+}
+
+.tournaments-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.tournaments-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.tournaments-section h2:hover::after {
+    width: 100px;
+}
+
+.tournaments-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.tournament-purpose, .tournament-types, .tournament-benefits {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #680000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tournament-purpose:hover, .tournament-types:hover, .tournament-benefits:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(104, 0, 0, 0.3);
+}
+
+.tournament-purpose h3, .tournament-types h3, .tournament-benefits h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.tournament-purpose h3:hover, .tournament-types h3:hover, .tournament-benefits h3:hover {
+    color: #D4AF37;
+}
+
+.tournament-purpose ul, .tournament-types ul, .tournament-benefits ul {
+    list-style: none;
+}
+
+.tournament-purpose li, .tournament-types li, .tournament-benefits li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.tournament-purpose li:hover, .tournament-types li:hover, .tournament-benefits li:hover {
+    transform: translateX(5px);
+}
+
+.tournament-types li strong {
+    color: #D4AF37;
+}
+
+/* Coaching Staff Section */
+.coaching-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+}
+
+.coaching-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.coaching-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.coaching-section h2:hover::after {
+    width: 100px;
+}
+
+.coaching-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.coach {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #680000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.coach:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(104, 0, 0, 0.3);
+}
+
+.coach-image {
+    margin-bottom: 15px;
+}
+
+.coach-image img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 50%;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.coach-image img:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+.coach-details {
+    flex: 1;
+}
+
+.coach h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.coach h3:hover {
+    color: #D4AF37;
+}
+
+.coach p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.coach p:hover {
+    transform: translateY(-2px);
+}
+
+/* Facilities Section */
+.facilities-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.2s;
+}
+
+.facilities-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.facilities-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.facilities-section h2:hover::after {
+    width: 100px;
+}
+
+.facilities-content ul {
+    list-style: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.facilities-content li {
+    font-size: 16px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.facilities-content li:hover {
+    transform: translateX(5px);
+}
+
+.facilities-content li strong {
+    color: #D4AF37;
+}
+
+/* Fee Structure Section */
+.fees-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.4s;
+}
+
+.fees-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.fees-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.fees-section h2::after {
+    width: 100px;
+}
+
+.fees-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.fees-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.fees-content th, .fees-content td {
+    padding: 15px;
+    text-align: left;
+    border: 1px solid #680000;
+    transition: background-color 0.3s ease;
+}
+
+.fees-content th {
+    background-color: #680000;
+    color: #F5EAEA;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+}
+
+.fees-content td {
+    background-color: #1A1A1A;
+    font-size: 16px;
+}
+
+.fees-content tr:hover td {
+    background-color: #2A2A2A;
+}
+
+.add-ons {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #680000;
+    transition: transform 0.3s ease;
+}
+
+.add-ons:hover {
+    transform: translateY(-5px);
+}
+
+.add-ons h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.add-ons h3:hover {
+    color: #D4AF37;
+}
+
+.add-ons p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Scholarships Section */
+.scholarships-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.6s;
+}
+
+.scholarships-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.scholarships-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.scholarships-section h2:hover::after {
+    width: 100px;
+}
+
+.scholarships-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.scholarship-type, .admission-fee {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #680000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scholarship-type:hover, .admission-fee:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(104, 0, 0, 0.3);
+}
+
+.scholarship-type h3, .admission-fee h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.scholarship-type h3:hover, .admission-fee h3:hover {
+    color: #D4AF37;
+}
+
+.scholarship-type p, .admission-fee p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.admission-fee ul {
+    list-style: none;
+}
+
+.admission-fee li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.admission-fee li:hover {
+    transform: translateX(5px);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 40px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1.8s;
+}
+
+.contact-section h2 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.contact-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 3px;
+    background-color: #680000;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s ease;
+}
+
+.contact-section h2:hover::after {
+    width: 100px;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-items: center;
+}
+
+.contact-info, .contact-images, .contact-form {
+    background-color: #1A1A1A;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #680000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info:hover, .contact-images:hover, .contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(104, 0, 0, 0.3);
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact-info h3, .contact-images h3, .contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.contact-info h3:hover, .contact-images h3:hover, .contact-form h3:hover {
+    color: #D4AF37;
+}
+
+.contact-info ul {
+    list-style: none;
+}
+
+.contact-info li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contact-info li:hover {
+    transform: translateX(5px);
+}
+
+.contact-images .image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.contact-images img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.contact-images img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    color: #F5EAEA;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.contact-form label:hover {
+    color: #D4AF37;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #0F0F0F;
+    border: 1px solid #680000;
+    border-radius: 5px;
+    color: #B0B0B0;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #D4AF37;
+    box-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 100px;
+    resize: none;
+}
+
+.contact-form button {
+    background-color: #680000;
+    color: #F5EAEA;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #D4AF37;
+    transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0F0F0F;
+    border-top: 1px solid #680000;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 2s;
+}
+
+footer p {
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: #D4AF37;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        padding: 20px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #0F0F0F;
+        padding: 20px 0;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.active {
+        display: flex;
+        animation: slideDown 0.5s ease forwards;
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle:hover span {
+        background-color: #D4AF37;
+    }
+
+    .close-btn {
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content h2 {
+        font-size: 24px;
+    }
+
+    .hero-logo img {
+        margin-top: 20px;
+        width: 150px;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 40px 20px;
+    }
+
+    .about-section h2 {
+        font-size: 36px;
+    }
+
+    /* Core Values Section */
+    .core-values-section {
+        padding: 40px 20px;
+    }
+
+    .core-values-section h2 {
+        font-size: 36px;
+    }
+
+    /* Programs Section */
+    .programs-section {
+        padding: 40px 20px;
+    }
+
+    .programs-section h2 {
+        font-size: 36px;
+    }
+
+    /* Tournaments Section */
+    .tournaments-section {
+        padding: 40px 20px;
+    }
+
+    .tournaments-section h2 {
+        font-size: 36px;
+    }
+
+    /* Coaching Section */
+    .coaching-section {
+        padding: 40px 20px;
+    }
+
+    .coaching-section h2 {
+        font-size: 36px;
+    }
+
+    /* Facilities Section */
+    .facilities-section {
+        padding: 40px 20px;
+    }
+
+    .facilities-section h2 {
+        font-size: 36px;
+    }
+
+    /* Fees Section */
+    .fees-section {
+        padding: 40px 20px;
+    }
+
+    .fees-section h2 {
+        font-size: 36px;
+    }
+
+    .fees-content table {
+        font-size: 14px;
+    }
+
+    .fees-content th, .fees-content td {
+        padding: 10px;
+    }
+
+    /* Scholarships Section */
+    .scholarships-section {
+        padding: 40px 20px;
+    }
+
+    .scholarships-section h2 {
+        font-size: 36px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 36px;
+    }
+}
